@@ -7,23 +7,22 @@ namespace Cronometro
     {
         static void Main(string[] args)
         {
-            Start();
+            Start(10);
         }
 
-        static void Start(int time)
+        static void Start(int time) // inclui um paramentro
         {
-            int time = 10;
             int currentTime = 0; // Incremento
 
             while (currentTime != time) //sempre executa aldo dada uma condição e ela tem que ser True.
             {
-                Console.Clear();
+
                 currentTime++;
                 Console.WriteLine(currentTime);
-                Thread.Sleep(1000);
-
-                Console.ReadKey();
+                Thread.Sleep(300);
             }
+            Console.ReadKey();
+
         }
     }
 }
