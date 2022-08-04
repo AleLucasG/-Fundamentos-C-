@@ -50,7 +50,7 @@ namespace TesteAulaBalta
             Console.ReadKey();
         }
         
-       static void Soma()
+        static void Soma()
         {
             Console.Clear();
 
@@ -69,7 +69,7 @@ namespace TesteAulaBalta
             Menu();
         }
 
-       static void Subtracao()
+        static void Subtracao()
         {
             Console.Clear();
 
@@ -88,7 +88,7 @@ namespace TesteAulaBalta
             Menu();
         }
 
-       static void Multiplicacao()
+        static void Multiplicacao()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -108,7 +108,7 @@ namespace TesteAulaBalta
         }
 
         
-       static void Divisao()
+        static void Divisao()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
