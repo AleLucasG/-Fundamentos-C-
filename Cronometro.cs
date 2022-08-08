@@ -14,32 +14,37 @@ namespace Cronometro
         {
             Console.Clear();
 
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(" ====== Cronômetro ====== ");
             Console.WriteLine("");
             Console.WriteLine("S = Segundo => 10seg = 10 segundos");
             Console.WriteLine("M = Minuto => 1min = 60 segundos");
-            Console.WriteLine("0 = Sair");
+            Console.WriteLine("0s = Sair");
 
             Console.Write("Quanto tempo deseja contar: ");
-            string data = Console.ReadLine().ToLower();
+            string valorDig = Console.ReadLine().ToLower();
+            Console.ResetColor();
 
-            char type = char.Parse(data.Substring(data.Length -1, 1));
-            int time = int.Parse(data.Substring(0, data.Length -1));
+            int tempo = int.Parse(valorDig.Substring(0, valorDig.Length - 1));
+            char tipo = char.Parse(valorDig.Substring(valorDig.Length - 1, 1));
+
             int multiplicador = 1;
 
-            if (type == 'm')
+
+            if (tipo == 'm')
                 multiplicador = 60;
 
-            if (time == 0)
+            if (tempo == 0)
                 Environment.Exit(0);
 
-            PresStar(time * multiplicador);
+            PresStar(tempo * multiplicador);
 
             Console.ReadKey();
         }
 
-        static void PresStar(int time)
+        static void PresStar(int tempo)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Clear();
             Console.WriteLine("Ready...");
             Thread.Sleep(1000);
@@ -47,16 +52,17 @@ namespace Cronometro
             Thread.Sleep(1000);
             Console.WriteLine("Go...");
             Thread.Sleep(2500);
+            Console.ResetColor();
 
-            Start(time);
+            Start(tempo);
         }
 
-        static void Start(int time)
+        static void Start(int tempo)
         {
             // int time = 10; - foi declado na função Start //
             int currentTime = 0;
 
-            while (currentTime != time)
+            while (currentTime != tempo)
             {
                 Console.Clear();
                 currentTime++;
@@ -66,8 +72,10 @@ namespace Cronometro
 
             Console.ReadKey();
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Cronômetro finalizado");
             Thread.Sleep(1000);
+            Console.ResetColor();
             Menu();
         }
     }
