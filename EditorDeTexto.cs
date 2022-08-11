@@ -56,7 +56,7 @@ namespace EditorDeTexto
             // enquanto o usuario não precionar ESC, execute...
             while (Console.ReadKey().Key != ConsoleKey.Escape);
 
-            Console.Write(texto);
+            Salvar(texto);
 
         }
 
@@ -70,6 +70,10 @@ namespace EditorDeTexto
             {
                arquivo.Write(texto);
             }
+
+            Console.WriteLine($"Arquivo {path} salvo com sucesso!");
+            Console.ReadLine();
+            Menu();
         }
     }
 
