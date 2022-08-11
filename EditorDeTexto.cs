@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EditorDeTexto
 {
@@ -16,10 +12,10 @@ namespace EditorDeTexto
         static void Menu()
         {
             Console.Clear();
-            Console.WriteLine("O que vocÊ quer fazer?");
-            Console.WriteLine("1 - Abrir um aruqivo de texto");
+            Console.WriteLine("O que você quer fazer?");
+            Console.WriteLine("1 - Abrir um arquivo de texto.");
             Console.WriteLine("2 - Criar novo arquivo.");
-            Console.WriteLine("0 - Sair");
+            Console.WriteLine("0 - Sair.");
             Console.Write($"Opção: ");
             short opções = short.Parse(Console.ReadLine());
             
@@ -60,6 +56,15 @@ namespace EditorDeTexto
             while (Console.ReadKey().Key != ConsoleKey.Escape);
 
             Console.Write(texto);
+
+        }
+
+        static void Salvar(string texto)
+        {
+            Console.Clear();
+            Console.WriteLine("Qual caminho para salvar o arquivo?");
+            var path = Console.ReadLine();
+
 
         }
     }
