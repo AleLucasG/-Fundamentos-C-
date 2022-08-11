@@ -16,13 +16,15 @@ namespace EditorDeTexto
         static void Menu()
         {
             Console.Clear();
-            Console.Write("O que vocÊ quer fazer? ");
+            Console.WriteLine("O que vocÊ quer fazer?");
             Console.WriteLine("1 - Abrir um aruqivo de texto");
             Console.WriteLine("2 - Criar novo arquivo.");
             Console.WriteLine("0 - Sair");
+            Console.Write($"Opção: ");
             short opções = short.Parse(Console.ReadLine());
+            
 
-            switch (opções)
+            switch (opções) // enquanto for verdade, execute
             {
                 case 0: System.Environment.Exit(0);
                     break;
@@ -33,6 +35,7 @@ namespace EditorDeTexto
                 default: Menu();
                     break;
             }
+            Console.ReadKey();
         }
 
         static void Abrir()
@@ -42,6 +45,21 @@ namespace EditorDeTexto
 
         static void Editar()
         {
+            Console.Clear();
+            Console.WriteLine("Digite seu texto abaixo (ESC para sair)");
+            Console.WriteLine(" ==================================== ");
+            string texto = " ";
+
+            do
+            {
+                texto += Console.ReadLine();     // tudo que tem um texto, + o que for digitado
+                texto += Environment.NewLine;
+            }
+
+            // enquanto o usuario não precionar ESC, execute...
+            while (Console.ReadKey().Key != ConsoleKey.Escape);
+
+            Console.Write(texto);
 
         }
     }
