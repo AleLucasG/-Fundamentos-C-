@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace EditorDeTexto
 {
@@ -65,7 +66,10 @@ namespace EditorDeTexto
             Console.WriteLine("Qual caminho para salvar o arquivo?");
             var path = Console.ReadLine();
 
-
+            using (var arquivo = new StreamWriter(path))    //fluxo de escrita
+            {
+               arquivo.Write(texto);
+            }
         }
     }
 
