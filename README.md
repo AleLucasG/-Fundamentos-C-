@@ -1,5 +1,4 @@
-# -Fundamentos-CSharp-
- Fundamentos do C# - Balta.IO
+ # Fundamentos do C# - Balta.IO
  
  Aula de Fundamentos C Sharp com o Mentor Andre Baltieri.
 
